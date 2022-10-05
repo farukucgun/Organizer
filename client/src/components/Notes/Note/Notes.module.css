@@ -1,0 +1,8 @@
+.notes {
+    display: flex;
+    padding: 10px;
+    border: solid red;
+    flex-wrap: wrap;  
+    /* overflow: scroll; */
+    /* position: relative; */
+}

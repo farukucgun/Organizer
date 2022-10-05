@@ -1,0 +1,15 @@
+.links {
+    display: flex;
+    padding: 10px;
+    border: solid red;
+    flex-wrap: wrap;  
+    /* overflow: scroll; */
+}
+
+.videos {
+    display: flex;
+    padding: 10px;
+    border: solid red;
+    flex-wrap: wrap;  
+    /* overflow: scroll; */
+}

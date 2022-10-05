@@ -1,3 +1,3 @@
 # Organizer
 
-A Full Stack React app for orginizing stuff.
+A Full Stack React app for organizing stuff.

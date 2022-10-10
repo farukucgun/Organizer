@@ -1,10 +1,16 @@
-{  
-  "homepage": "http://farukucgun.github.io/Organizer",
-  "devDependencies": {
-    "gh-pages": "^4.0.0"
+{
+  "homepage":"http://farukucgun.github.io/Organizer",
+  "devDependencies":
+  {
+    "gh-pages":"^4.0.0"
   },
-  "scripts": {
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d build"
+  "scripts":
+  {
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+    }
   }
-}

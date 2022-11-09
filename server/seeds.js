@@ -21,47 +21,56 @@ const seedLinks = [
     {
         title: "codewars",
         link: "https://www.codewars.com/dashboard",
-        isVideo: false
+        isVideo: false,
+        user_id: "6359a7f8a4c2021f92b10d56"
     },
     {
         title: "codingbat",
         link: "https://codingbat.com/java",
-        isVideo: false
+        isVideo: false,
+        user_id: "6359a7f8a4c2021f92b10d56"
     },
     {
         title: "leetcode",
         link: "https://leetcode.com/",
-        isVideo: false
+        isVideo: false,
+        user_id: "6359a7f8a4c2021f92b10d56"
     },
     {
         title: "10 iconic guitar solos",
         link: "https://www.youtube.com/watch?v=Anop2dCuR2g&ab_channel=PaulDavids",
-        isVideo: true
+        isVideo: true,
+        user_id: "6359a7f8a4c2021f92b10d56"
     },
     {
         title: "office impersonations-the office us",
         link: "https://www.youtube.com/watch?v=Bmu1n40bA4Y&ab_channel=TheOffice",
-        isVideo: true
+        isVideo: true,
+        user_id: "6359a7f8a4c2021f92b10d56"
     },
     {
         title: "cars 2005 teaser trailer",
         link: "https://www.youtube.com/watch?v=TDAwtQQJOzo&ab_channel=B%C3%BAho718",
-        isVideo: true
+        isVideo: true,
+        user_id: "6359a7f8a4c2021f92b10d56"
     }
 ]
 
 const seedNotes = [
     {
         title: "phys-102",
-        note: "physics quiz on tuesday"
+        note: "physics quiz on tuesday",
+        user_id: "6359a7f8a4c2021f92b10d56"
     },
     {
         title: "phys-102",
-        note: "print the lab docs"
+        note: "print the lab docs",
+        user_id: "6359a7f8a4c2021f92b10d56"
     },
     {
         title: "tennis",
-        note: "arrange double tennis match on the weekend"
+        note: "arrange double tennis match on the weekend",
+        user_id: "6359a7f8a4c2021f92b10d56"
     }
 ]
 

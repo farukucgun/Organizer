@@ -7,6 +7,7 @@
     padding: 7px;
     background-color: #faedcd;
     border-radius: 15%;
+    cursor: pointer;
 }
 
 .submit:hover {

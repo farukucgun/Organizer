@@ -1,9 +1,12 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import axios from 'axios';
 
 import classes from './NewNote.module.css';
+import AuthContext from '../../../store/auth-context';
 
 const NewNote = (props) => {
+
+    const ctx = useContext(AuthContext);
 
     const [enteredNote, setEnteredNote] = useState('')
     const [enteredTitle, setEnteredTitle] = useState('')
@@ -21,13 +24,13 @@ const NewNote = (props) => {
 
         const noteData = {
             title: enteredTitle,
-            note: enteredNote
+            note: enteredNote,
+            user_id: ctx.userID
         }
 
-        // const res = 
         await axios.post('http://localhost:5000/notes', noteData)
         .then((data) => {
-            props.onAddNote(data.data);
+            props.onAddNote(data.data.data);
             console.log("added the note");
         })
         .catch((err) => {

@@ -5,6 +5,8 @@ import cors from "cors";
 
 import linksRoute from "./routes/links.js";
 import notesRoute from "./routes/notes.js";
+import signinRoute from "./routes/signin.js";
+import signupRoute from "./routes/signup.js";
 
 const app = express();
 dotenv.config();
@@ -16,6 +18,10 @@ app.use(cors());
 app.get("/", (req, res) => {
     res.send("home page");
 })
+
+app.use("/signup", signupRoute);
+
+app.use("/signin", signinRoute);
 
 app.use("/links", linksRoute);
 

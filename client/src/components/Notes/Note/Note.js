@@ -6,10 +6,9 @@ import classes from './Note.module.css';
 const Note = (props) => {
 
     const deleteNoteHandler = async (event) => {
-        // const res = 
         await axios.delete(`http://localhost:5000/notes/${props.id}`)
         .then((data) => {
-            props.onDeleteNote(data.data);
+            props.onDeleteNote(data.data.data);
             console.log("deleted the note");
         })
         .catch((err) => {

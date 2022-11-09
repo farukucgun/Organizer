@@ -1,19 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 
 import classes from './Notes.module.css';
 
 import NewNote from "../NewNote/NewNote";
 import Note from './Note';
+import AuthContext from '../../../store/auth-context';
 
 const Notes = (props) => {
+
+    const ctx = useContext(AuthContext);
 
     const [notes, setNotes] = useState([]);
 
     useEffect(() => {
         const fetchNotes = async () => {
-            const res = await axios.get('http://localhost:5000/notes');
-            setNotes(res.data);
+            
+            await axios.get(`http://localhost:5000/notes/${ctx.userID}`)
+            .then(data => {
+                setNotes(data.data.data)
+            })
+            .catch(err => {
+                console.log(err.message)
+                console.log("error getting notes")
+            })  
         }
 
         fetchNotes().catch((err) => {
@@ -24,7 +34,7 @@ const Notes = (props) => {
 
     const addNoteHandler = (note) => {
         setNotes((prevNotes) => {
-            return [...prevNotes, note]
+            return [note, ...prevNotes]
         });  
     }
 

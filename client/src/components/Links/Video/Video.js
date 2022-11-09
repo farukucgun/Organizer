@@ -6,10 +6,9 @@ import classes from './Video.module.css';
 const Video = (props) => {
 
     const DeleteVideoHandler = async (event) => {
-        // const res = 
         await axios.delete(`http://localhost:5000/links/${props.id}`)
         .then((data) => {
-            props.onDeleteVideo(data.data);
+            props.onDeleteVideo(data.data.data);
             console.log("deleted the video");
         })
         .catch((err) => {

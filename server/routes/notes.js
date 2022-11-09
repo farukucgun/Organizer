@@ -3,32 +3,31 @@ const router = express.Router();
 
 import noteModel from '../models/note.js';
 
-router.get('/', async (req, res) => {
-    const notes = await noteModel.find({})
+router.get('/:user_id', async (req, res) => {
+    const { user_id } = req.params;
+    const notes = await noteModel.find( {"user_id": user_id} )
     .then(data => {
-        console.log('found the notes')
-        res.json(data)
+        res.json({status: 'ok', data})
     })
     .catch(err => {
-        console.log("Couldn't find the notes")
-        console.log(err.message)
+        res.json({status: 'error', error: "Couldn't find notes"})
     })
 
 })
 
 router.post('/', async (req, res) => {
+    const { title, note, user_id } = req.body;
     const newNote = new noteModel({
-        title: req.body.title,
-        note: req.body.note
+        title: title,
+        note: note,
+        user_id: user_id
     })
     await newNote.save()
     .then(data => {
-        console.log('successfully added a new note')
-        res.json(data)
+        res.json({status: 'ok', data})
     })
     .catch(err => {
-        console.log("couldn't add a new note")
-        console.log(err.message)
+        res.json({status: 'error', error: "Couldn't add new note"})
     })
 })
 
@@ -36,12 +35,11 @@ router.delete('/:id', async (req, res) => {
     const { id } = req.params;
     const deletedNote = await noteModel.findByIdAndDelete(id)
     .then(data => {
-        console.log('deleted the note')
-        res.json(data)
+        res.json({status: 'ok', data})
     })
     .catch(err => {
-        console.log("Couldn't delete the note")
-        console.log(err.message)
+        res.json({status: 'error', error: "Couldn't delete notes"})
     })
 })
+
 export default router;

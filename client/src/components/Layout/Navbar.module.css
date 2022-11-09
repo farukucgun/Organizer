@@ -1,4 +1,10 @@
-.submit {
+.navbar {
+    background-color: rgb(236, 241, 177);
+    /* margin: 10px; */
+    padding: 10px;
+}
+
+.login {
     margin: 0 10px 0 10px;
     padding: 7px;
     background-color: #faedcd;
@@ -6,19 +12,11 @@
     cursor: pointer;
 }
 
-.submit:hover {
+.login:hover {
     background-color: #d4a373;
     color: rgb(17, 55, 225);
 }
 
-#link_title {
-    margin: 0 5px 0 5px;
-}
-
-#link_link {
-    margin-left: 5px;
-}
-
-.new_link {
-    margin-left: 10px;
+a {
+    text-decoration: none;
 }

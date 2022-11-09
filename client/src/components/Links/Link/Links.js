@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 
 import classes from './Links.module.css';
@@ -6,20 +6,30 @@ import classes from './Links.module.css';
 import NewLink from '../NewLink/NewLink';
 import Link from './Link';
 import Video from '../Video/Video';
+import AuthContext from '../../../store/auth-context';
 
 const Links = (props) => {
+
+    const ctx = useContext(AuthContext);
 
     const [links, setLinks] = useState([]);
     const [videos, setVideos] = useState([]);
 
     useEffect(() => {
         const fetchLinks = async () => {
-            const res = await axios.get('http://localhost:5000/links');
-            const linkData = res.data.filter(link => !link.isVideo);
-            const videoData = res.data.filter(link => link.isVideo);
+            
+            await axios.get(`http://localhost:5000/links/${ctx.userID}`)
+            .then(data => {
+                const linkData = data.data.data.filter(link => !link.isVideo);
+                const videoData = data.data.data.filter(link => link.isVideo);
 
-            setLinks(linkData);
-            setVideos(videoData);
+                setLinks(linkData);
+                setVideos(videoData);
+            })
+            .catch(err => {
+                console.log(err.message)
+                console.log("error getting links")
+            })   
         }
 
         fetchLinks().catch((err) => {
@@ -31,11 +41,11 @@ const Links = (props) => {
     const addLinkHandler = (link) => {
         link.isVideo ?
         setVideos((prevVideos) => {
-            return [...prevVideos, link]
+            return [link, ...prevVideos]
         })
         :
         setLinks((prevLinks) => {
-            return [...prevLinks, link]
+            return [link, ...prevLinks]
         });   
     }
     

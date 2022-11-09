@@ -5,11 +5,10 @@ import classes from './Link.module.css';
 
 const Link = (props) => {
 
-    const DeleteLinkHandler = async (event) => {
-        // const res = 
+    const deleteLinkHandler = async (event) => {
         await axios.delete(`http://localhost:5000/links/${props.id}`)
         .then((data) => {
-            props.onDeleteLink(data.data);
+            props.onDeleteLink(data.data.data);
             console.log("deleted the link");
         })
         .catch((err) => {
@@ -21,7 +20,7 @@ const Link = (props) => {
     return (
         <li className={classes.link}>
             <a href={props.link}>{props.title}</a>
-            <button className={classes.delete} onClick={DeleteLinkHandler}>X</button>
+            <button className={classes.delete} onClick={deleteLinkHandler}>X</button>
         </li>
     );
 }

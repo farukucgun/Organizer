@@ -5,7 +5,7 @@ import classes from './News.module.css';
 
 import New from './New';
 
-const API_KEY = "f9a7b6010cf04c1e9e08cb60f1766aac";
+const API_KEY = "your_api_key";
 
 const Categories = ["business","entertainment","general","health","science","sports","technology"];
 const randomCategory = Categories[Math.floor(Math.random() * Categories.length)];

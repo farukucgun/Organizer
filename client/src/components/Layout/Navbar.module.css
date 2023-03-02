@@ -1,0 +1,22 @@
+.navbar {
+    background-color: rgb(236, 241, 177);
+    /* margin: 10px; */
+    padding: 10px;
+}
+
+.login {
+    margin: 0 10px 0 10px;
+    padding: 7px;
+    background-color: #faedcd;
+    border-radius: 15%;
+    cursor: pointer;
+}
+
+.login:hover {
+    background-color: #d4a373;
+    color: rgb(17, 55, 225);
+}
+
+a {
+    text-decoration: none;
+}

@@ -1,0 +1,26 @@
+.delete {
+    padding: 2px;
+    background-color: transparent;
+    border: none;
+    font-weight: 700;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.note {
+    background-color: rgb(237, 193, 126);
+    margin: 8px;
+    max-width: 250px;
+    position: relative;
+    border: solid rgb(14, 130, 5);
+    padding: 8px;
+
+}
+
+/* used in all the p and h4 elements */
+p, h4{
+    word-wrap: break-word;
+    max-width: 250px;
+}
+

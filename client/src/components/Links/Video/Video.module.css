@@ -1,0 +1,25 @@
+h4 {
+    margin: 5px 0 5px 0;
+    text-align: center;
+}
+
+.video {
+    margin: 8px;
+    padding: 8px;
+    flex: 1 0 auto; 
+    border: solid rgb(14, 130, 5);
+    max-width:max-content;
+    background-color: rgb(237, 193, 126);
+    position: relative;
+}
+
+.delete {
+    padding: 2px;
+    background-color: transparent;
+    border: none;
+    font-weight: 700;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+

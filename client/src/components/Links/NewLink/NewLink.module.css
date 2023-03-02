@@ -1,0 +1,24 @@
+.submit {
+    margin: 0 10px 0 10px;
+    padding: 7px;
+    background-color: #faedcd;
+    border-radius: 15%;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: #d4a373;
+    color: rgb(17, 55, 225);
+}
+
+#link_title {
+    margin: 0 5px 0 5px;
+}
+
+#link_link {
+    margin-left: 5px;
+}
+
+.new_link {
+    margin-left: 10px;
+}

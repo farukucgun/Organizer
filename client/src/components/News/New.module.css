@@ -1,0 +1,33 @@
+.new {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #410590;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    max-width: 270px;
+    position: relative;
+  }
+  
+  .new h2 {
+    font-size: 1rem;
+    color: #f7e702;
+  }
+  
+  .new h3 {
+    color: #eccf77;
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  /* effects the link title in link component too */
+  .new a {
+    text-decoration: none;  
+    color:#f7e702;
+  }
+  
+  img {
+    max-width:100%;
+  }
+  
